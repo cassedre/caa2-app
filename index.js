@@ -34,9 +34,10 @@ const Items = db.Items;
 app.set("view engine", "ejs")
 app.use(express.static('assets'));
 
+const PORT = process.env.PORT || 3000;
 //open listener port
-app.listen(5000, () => {
-    console.log('Port 5000')
+app.listen(PORT, () => {
+    console.log('Port 3000')
 })
 
 
