@@ -52,3 +52,32 @@ app.get('/', (req, res) => {
         })
 
 })
+
+//update ITEMS
+app.get('/update-item/', (req, res) => {
+    res.render('update', {
+        item:req.query.item,
+        itemId: req.query.itemId,
+        section: req.query.section,
+        price: req.query.price
+    })
+
+
+})
+
+//update
+app.put('/update', (req, res) => {
+  //get the id from url
+  const item = req.body.item
+  //get the update data
+  const itemData = req.body
+  console.log('data:',itemData)
+    db.Items.update({item:item},itemData).then(data=>{
+            res.send(data)
+        //   res.redirect('/')
+        }).catch(err=>{
+            return res.status(409).send({error: true, msg: 'Item id not exist'})
+        })
+  
+})
+
