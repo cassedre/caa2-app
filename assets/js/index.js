@@ -10,7 +10,7 @@ $("#update_item").submit(function(event){
 
 
     var request = {
-        "url" : `http://localhost:5000/update/`,
+        "url" : `https://cafeitemlist.herokuapp.com/`,
         "method" : "PUT",
         "data" : data
     }
@@ -26,7 +26,7 @@ if(window.location.pathname == "/"){
     $ondelete.click(function(){
         var id= $(this).attr("data-id")
         var request = {
-            "url" : `http://localhost:5000/delete/${id}`,
+            "url" : `https://cafeitemlist.herokuapp.com/${id}`,
             "method" : "DELETE"
         }
 
